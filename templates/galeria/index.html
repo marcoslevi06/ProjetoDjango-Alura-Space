@@ -30,28 +30,29 @@
                     <div class="cards">
                         <h2 class="cards__titulo">Navegue pela galeria</h2>
                         <ul class="cards__lista">
-                            {% if fotografia %}
-                                {% for foto in fotografia %}
-                                    <li class="card">
-                                        <a href="{% url 'imagem' foto.id %}">
-                                            {% comment %} add concatena o caminho com o valor da variavel em foto.foto {% endcomment %}
-                                            <img class="card__imagem" src="{% static 'assets/imagens/galeria/'|add:foto.foto %}" alt="foto">
-                                        </a>
-                                        <span class="card__tag">Estrelas</span>
-                                        <div class="card__info">
-                                            <p class="card__titulo"> {{ foto.nome }}</p>
-                                            <div class="card__texto">
-                                                <p class="card__descricao">{{ foto.legenda }}</p>
-                                                <span>
-                                                    <img src="{% static '/assets/ícones/1x/favorite_outline.png'%}" alt="ícone de coração">
-                                                </span>
-                                            </div>
+                            {% for foto in fotografia %}
+                                <li class="card">
+                                    <a href="{% url 'imagem' foto.id %}">
+                                        {% comment %} add concatena o caminho com o valor da variavel em foto.foto |add:foto.foto %}{% endcomment %}
+                                        {% if foto.foto == '' or foto.foto == null%}
+                                            <img class="card__imagem" src="{% static 'assets/imagens/galeria/404.png' %}" alt="foto">
+                                        {% else %}
+                                            <img class="card__imagem" src="{{ foto.foto.url }}" alt="foto">
+                                        {% endif %}
+                                    </a>
+                                    <span class="card__tag">Estrelas</span>
+                                    <div class="card__info">
+                                        <p class="card__titulo"> {{ foto.nome }}</p>
+                                        <div class="card__texto">
+                                            <p class="card__descricao">{{ foto.legenda }}</p>
+                                            <span>
+                                                <img src="{% static '/assets/ícones/1x/favorite_outline.png'%}" alt="ícone de coração">
+                                            </span>
                                         </div>
-                                    </li>
-                                {% endfor %}
-                            {% else %}
-                                <h2 class="cards__titulo" style="background-color:red; color:white; padding:10px;"> >>>Não há fotos cadastradas <<< </h2>
-                            {% endif %}
+                                    </div>
+                                </li>
+                            {% endfor %}
+                            {% comment %} <h2 class="cards__titulo" style="background-color:red; color:white; padding:10px;"> >>>Não há fotos cadastradas <<< </h2> {% endcomment %}
                         </ul>
                     </div>
                 </section>
