@@ -22,3 +22,4 @@ pip install python-dotenv: instala o módulo para trabalhar com variáveis de am
 python manage.py startapp core: cria a aplicação core
 python manage.py collectstatic: coleta os arquivos estáticos
 python manage.py makemigrations: cria as migrações
+python manage.py createsuperuser: cria um super usuário
