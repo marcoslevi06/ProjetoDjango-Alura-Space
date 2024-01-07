@@ -18,7 +18,6 @@ class Migration(migrations.Migration):
                 ('nome', models.CharField(max_length=200)),
                 ('legenda', models.CharField(blank=True, max_length=200, null=True)),
                 ('descricao', models.TextField(blank=True, null=True)),
-                ('foto', models.CharField(max_length=200)),
-            ],
+                ('foto', models.CharField(max_length=200)),            ],
         ),
     ]

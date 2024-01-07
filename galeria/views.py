@@ -5,8 +5,7 @@ def index(request):
 
     print('Request TYPE:', request.method)
 
-    fotografia = Fotografia.objects.all()
-
+    fotografia = Fotografia.objects.order_by('data_criacao').filter(publicada=True)
     # cont = 0
     # for foto in fotografia:
     #     cont += 1
