@@ -1,0 +1,21 @@
+Criando ambiente virtual: virtualenv venv
+Ativando VirtualEnv: source venv/bin/activate
+Desativando: deactivate
+Instalando Django: pip install django
+Descrição dos módulos necessários pro projeto: pip freeze > requirements.txt
+Criando o projeto: django-admin startproject setup .
+Subindo servidor: pyhton manage.py runserver
+
+Variáveis de Ambiente:
+    SECRET_KEY: gera uma chave secreta para o projeto
+    DEBUG: True ou False
+    ALLOWED_HOSTS: lista de hosts permitidos
+    DATABASES: configuração do banco de dados
+    STATIC_URL: url para arquivos estáticos
+    STATIC_ROOT: diretório para arquivos estáticos
+    MEDIA_URL: url para arquivos de mídia
+    MEDIA_ROOT: diretório para arquivos de mídia
+
+pip install python-dotenv: instala o módulo para trabalhar com variáveis de ambiente
+
+python manage.py startapp core: cria a aplicação core
