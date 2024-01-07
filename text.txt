@@ -3,6 +3,7 @@ Ativando VirtualEnv: source venv/bin/activate
 Desativando: deactivate
 Instalando Django: pip install django
 Descrição dos módulos necessários pro projeto: pip freeze > requirements.txt
+Puxando os módulos necessários pro projeto: pip install -r requirements.txt
 Criando o projeto: django-admin startproject setup .
 Subindo servidor: pyhton manage.py runserver
 
@@ -19,5 +20,5 @@ Variáveis de Ambiente:
 pip install python-dotenv: instala o módulo para trabalhar com variáveis de ambiente
 
 python manage.py startapp core: cria a aplicação core
-
 python manage.py collectstatic: coleta os arquivos estáticos
+python manage.py makemigrations: cria as migrações
