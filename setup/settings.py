@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # adicionando as aplicações criadas
     'galeria.apps.GaleriaConfig',
+    'usuarios.apps.UsuariosConfig',
 
 ]
 
